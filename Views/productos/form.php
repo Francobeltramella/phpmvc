@@ -1,29 +1,54 @@
-<div class="container">
-<h1 class="my-3"><?=$titulo?></h1>
-<form method="POST" class="bg-dark px-3 py-3 text-light" action="?c=producto&a=Guardar">
-  <input class="form-control" name="id" type="hidden" value="<?=$p->getProd_id()?>">
-  <div class="mb-3">
-    <label for="nombre" class="form-label">Nombre Producto</label>
-    <input type="text" class="form-control" name="nombre" value="<?=$p->getProd_nombre()?>">
- </div>
- <div class="mb-3">
-    <label for="prod_marca" class="form-label">Marca Producto</label>
-    <input type="text" class="form-control" name="marca" value="<?=$p->getProd_marca()?>">
- </div>
- <div class="mb-3">
-    <label for="prod_costo" class="form-label">Costo Producto</label>
-    <input type="number" class="form-control" name="costo" value="<?=$p->getProd_costo()?>">
- </div>
- <div class="mb-3">
-    <label for="prod_precio" class="form-label">Precio Producto</label>
-    <input type="number" class="form-control" name="precio" value="<?=$p->getProd_precio()?>">
- </div>
- <div class="mb-3">
-    <label for="prod_cantidad" class="form-label">Stock Producto</label>
-    <input type="number" class="form-control" name="cantidad" value="<?=$p->getProd_cantidad()?>">
- </div>
+<div class="wrapper">
+   <div class="row">
+      <div class="col-12 col-m-12 col-sm-12">
+				<div class="card">
+					<div class="card-header">
+						<h3>
+                  <?=$titulo?>
+						</h3>
+						<i class="fas fa-ellipsis-h"></i>
+					</div>
+					<div class="card-content">
+						<div class="progress-wrapper">
+                     <form class="form" method="POST" action="?c=producto&a=Guardar">
+                        <input class="" name="id" type="hidden" value="<?=$p->getProd_id()?>">
+                        <div>
+                           <span>Nombre</span>
+                           <input type="text" name="nombre" class="form-input"  value="<?=$p->getProd_nombre()?>">
+                        </div>
+                        <br>
+                        <div>
+                           <span>Marca</span>
+                           <input type="text" name="marca" class="form-input"  value="<?=$p->getProd_marca()?>">
+                        </div>
+                        <br>
+                        <div>
+                           <span>Costo</span>
+                           <input type="text" name="costo" class="form-input"  value="<?=$p->getProd_costo()?>">
+                        </div>
+                        <br>
+                        <div>
+                           <span>Precio</span>
+                           <input type="text" name="precio" class="form-input"  value="<?=$p->getProd_precio()?>">
+                        </div>
+                        <br>
+                        <div>
+                           <span>Cantidad</span>
+                           <input type="text" name="cantidad" class="form-input"  value="<?=$p->getProd_cantidad()?>">
+                           <br> 
+                           <br>                    
+                           <button type="submit" class="button">Guardar</button>
 
-  <button type="submit" class="btn btn-primary">Agregar</button>
-</form>
-
+                        </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

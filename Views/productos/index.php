@@ -1,33 +1,68 @@
-<div class="container">
-<table class="table table-dark table-bordered ">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Marca</th>
-      <th scope="col">Costo</th>
-      <th scope="col">Precio</th>
-      <th scope="col">Cantidad</th>
-      <th scope="col">Acciones</th>
-      </tr>
-  </thead>
-  <tbody>
-  <?php foreach ($this->model->Listar() as $r): ?>
-    <tr>
-      <th scope="row"><?=$r->prod_id?></th>
-      <td><?=$r->prod_nombre?></td>
-      <td><?=$r->prod_marca?></td>
-      <td><?=$r->prod_costo?></td>
-      <td><?=$r->prod_precio?></td>
-      <td><?=$r->prod_cantidad?></td>
-      <td>
-      <a class="btn btn-info mx-2 my-2" href="?c=producto&a=FormInsertar&id=<?=$r->prod_id?>" >Actualizar</a>
-      <a class="btn btn-danger mx-2 my-2"   href="?c=producto&a=Borrar&id=<?=$r->prod_id?>" >Borrar</a>
-      </td>
-    </tr>
-  <?php endforeach?>
-  <a class="btn btn-primary my-3" type="button"  href="?c=producto&a=FormInsertar" >Insertar Producto</a>
+<div class="wrapper">
+    <div class="row">
+			<div class="col-12 col-m-12 col-sm-12">
+				<div class="card">
+					<div class="card-header">
+						<h3>
+							Productos
+						</h3>
+						<a title="Añadir Producto" href="?c=producto&a=FormInsertar">
+						<i class="fas fa-plus">
+						</i>
+						</a>
+					</div>
+					<div class="card-content">
+						<table>
+							<thead>
+								<tr>
+									<th>Nombre</th>
+									<th>Marca</th>
+									<th>Costo</th>
+									<th>Estado</th>
+									<th>Precio</th>
+									<th>Cantidad</th>
+									<th>Acciones</th>
+								</tr>
+							</thead>
+							<tbody>
+                                <?php foreach ($this->model->Listar() as $r): ?>
+								<tr>
+									<td><?=$r->prod_nombre?></td>
+									<td><?=$r->prod_marca?></td>
+									<td><?=$r->prod_costo?></td>
+									<td>
+										<span class="dot">
+											<i class="bg-success"></i>
+											Vendido
+										</span>
+									</td>
+									<td><?=$r->prod_precio?></td>
+									<td><?=$r->prod_cantidad?></td>
+									<td>
+									<a class="nav-link" title="Actualizar" 
+									href="?c=producto&a=FormInsertar&id=<?=$r->prod_id?>"  >
+									<i class="fas fa-retweet"></i>
+									</a>
+									<a class="nav-link" title="Eliminar" 
+									href="?c=producto&a=Borrar&id=<?=$r->prod_id?>" >
+									<i class="fas fa-trash"></i>
+									</a>
+									</td>
+									</tr>
+									<?php endforeach?>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
 
-  </tbody>
 
-</table>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+  <script src="index.js"></script>
+
+
+</body>
+</html>
